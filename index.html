@@ -3,393 +3,352 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<meta name="description" content="Rafael Menezes, engenheiro de software full stack sênior. Projetos em React, Next.js, NestJS, AWS e IA aplicada.">
-<title>Rafael Menezes · Portfólio</title>
+<title>Rafael Menezes · Engenheiro de IA</title>
+<meta name="description" content="Rafael Menezes, engenheiro de IA e desenvolvedor full stack. Agentes, tool calling, RAG e guardrails em produção, sobre TypeScript, Python, PostgreSQL e AWS.">
+<meta name="theme-color" content="#f4f5f6" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#14161a" media="(prefers-color-scheme: dark)">
+<meta property="og:title" content="Rafael Menezes · Engenheiro de IA">
+<meta property="og:description" content="Agentes, tool calling, RAG e guardrails em produção, sobre TypeScript, Python, PostgreSQL e AWS.">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="pt_BR">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' fill='%231b1d21'/%3E%3Cpath d='M9 24V8h8a5 5 0 0 1 0 10h-8m8 0 6 6' fill='none' stroke='%23f4f5f6' stroke-width='3'/%3E%3C/svg%3E">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=IBM+Plex+Sans:wght@400;500;600&family=JetBrains+Mono:wght@400;500&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Newsreader:opsz,wght@6..72,400;6..72,500;6..72,600&family=Public+Sans:wght@400;500;600&display=swap">
 <style>
-/* Layout: ficha técnica de engenharia — cabeçalho com tese, faixa de números reais, projetos como "fichas" com stack e resultado, linha do tempo e contato */
 :root{
-  --bg:#eef1f2;
-  --surface:#ffffff;
-  --ink:#13202a;
-  --muted:#56656f;
-  --line:#d3dade;
-  --accent:#0d6b73;
-  --accent-soft:#d7ebec;
-  --warm:#b5531f;
-  --display:"Bricolage Grotesque", "Helvetica Neue", Arial, sans-serif;
-  --body:"IBM Plex Sans", "Segoe UI", Roboto, Arial, sans-serif;
-  --mono:"JetBrains Mono", ui-monospace, "SFMono-Regular", Menlo, Consolas, monospace;
+  --bg:#f4f5f6;
+  --ink:#1b1d21;
+  --muted:#565b63;
+  --line:#cfd3d8;
+  --accent:#8a2f1d;
+  --serif:"Newsreader", Georgia, "Times New Roman", serif;
+  --sans:"Public Sans", "Helvetica Neue", Arial, sans-serif;
+  --s-0:.875rem; --s-1:1rem; --s-2:1.1875rem; --s-3:1.5rem; --s-4:2.125rem;
 }
 @media (prefers-color-scheme: dark){
-  :root:not([data-theme="light"]){
-    --bg:#0f171c; --surface:#162229; --ink:#e6ecef; --muted:#97a6ae; --line:#2a3a43;
-    --accent:#5fc3c9; --accent-soft:#17343a; --warm:#e58a55; color-scheme:dark;
-  }
+  :root:not([data-theme="light"]){--bg:#14161a;--ink:#e8e9eb;--muted:#a0a5ad;--line:#2d3138;--accent:#e08a74;color-scheme:dark}
 }
-:root[data-theme="dark"]{
-  --bg:#0f171c; --surface:#162229; --ink:#e6ecef; --muted:#97a6ae; --line:#2a3a43;
-  --accent:#5fc3c9; --accent-soft:#17343a; --warm:#e58a55; color-scheme:dark;
-}
+:root[data-theme="dark"]{--bg:#14161a;--ink:#e8e9eb;--muted:#a0a5ad;--line:#2d3138;--accent:#e08a74;color-scheme:dark}
 *{box-sizing:border-box}
-body{background:var(--bg);color:var(--ink);font-family:var(--body);font-size:16px;line-height:1.6;
-  padding-left:max(16px,env(safe-area-inset-left,0px));padding-right:max(16px,env(safe-area-inset-right,0px))}
-.wrap{max-width:1080px;margin:0 auto}
-a{color:var(--accent);text-underline-offset:3px}
-a:focus-visible,button:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:4px}
-h1,h2,h3{font-family:var(--display);text-wrap:balance;margin:0;line-height:1.1}
-.label{font-family:var(--mono);font-size:.75rem;letter-spacing:.08em;text-transform:uppercase;color:var(--muted)}
-section{padding-block:56px;border-top:1px solid var(--line)}
-section > .head{display:flex;justify-content:space-between;align-items:baseline;gap:16px;flex-wrap:wrap;margin-bottom:28px}
-section h2{font-size:clamp(1.6rem,3.2vw,2.2rem);font-weight:700}
+html{-webkit-text-size-adjust:100%}
+body{margin:0;background:var(--bg);color:var(--ink);font:400 var(--s-2)/1.6 var(--serif);
+  padding:0 max(20px,env(safe-area-inset-right)) 0 max(20px,env(safe-area-inset-left));font-kerning:normal;text-rendering:optimizeLegibility}
+a{color:inherit;text-decoration-color:var(--accent);text-decoration-thickness:1px;text-underline-offset:.22em}
+a:hover{color:var(--accent)}
+a:focus-visible{outline:2px solid var(--accent);outline-offset:3px;border-radius:2px}
+.page{max-width:1040px;margin:0 auto}
+h1,h2,h3,p,ul,ol,dl,dd{margin:0}
+ul,ol{padding:0;list-style:none}
+.sans{font-family:var(--sans)}
 
-/* Hero */
-.hero{padding-block:64px 48px;display:grid;grid-template-columns:1.6fr 1fr;gap:40px;align-items:end}
-.hero h1{font-size:clamp(2.6rem,7vw,5rem);font-weight:800;letter-spacing:-.02em}
-.hero h1 span{color:var(--accent)}
-.role{font-family:var(--mono);font-size:.9rem;color:var(--muted);margin:14px 0 22px}
-.thesis{font-size:1.15rem;max-width:58ch;margin:0}
-.contact-card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:12px;min-width:0}
-.contact-card .row{display:flex;justify-content:space-between;gap:12px;align-items:center;flex-wrap:wrap}
-.contact-card .val{font-family:var(--mono);font-size:.85rem;word-break:break-all}
-.copy{font-family:var(--mono);font-size:.72rem;border:1px solid var(--line);background:transparent;color:var(--ink);border-radius:6px;padding:4px 10px;cursor:pointer}
-.copy:hover{border-color:var(--accent);color:var(--accent)}
-.status{display:inline-flex;gap:8px;align-items:center;font-size:.85rem;color:var(--muted)}
-.status::before{content:"";width:8px;height:8px;border-radius:50%;background:var(--accent)}
+/* abertura */
+header{padding:clamp(48px,9vw,112px) 0 clamp(40px,6vw,72px)}
+h1{font:500 clamp(3rem,9vw,5.75rem)/.98 var(--serif);letter-spacing:-.025em;font-optical-sizing:auto}
+.role{font:500 var(--s-1)/1.4 var(--sans);color:var(--muted);margin:20px 0 28px}
+.lede{font-size:clamp(1.25rem,2.4vw,1.5rem);line-height:1.5;max-width:34em}
+.contact{display:flex;flex-wrap:wrap;gap:0 28px;margin-top:24px;font:500 var(--s-1)/1.4 var(--sans)}
+.contact a{display:inline-block;padding:12px 0}
+.index .links{display:inline-block;padding:10px 0}
 
-/* Números */
-.metrics{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line);border-radius:10px;overflow:hidden;margin-bottom:8px}
-.metric{background:var(--surface);padding:20px;min-width:0}
-.metric b{display:block;font-family:var(--display);font-size:2rem;font-weight:700;font-variant-numeric:tabular-nums;line-height:1.1}
-.metric span{font-size:.88rem;color:var(--muted)}
+/* seções */
+section{display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:48px;padding:48px 0;border-top:1px solid var(--line)}
+section>h2{font:600 var(--s-0)/1.4 var(--sans);color:var(--muted);letter-spacing:.01em;padding-top:.5em;position:sticky;top:24px;align-self:start}
+.body{min-width:0}
+.work{padding:0 0 40px}
+.work+.work{padding-top:40px;border-top:1px solid var(--line)}
+.work:last-child{padding-bottom:0}
+.work h3{font:500 var(--s-4)/1.15 var(--serif);letter-spacing:-.012em;margin-bottom:6px}
+.work .meta{font:400 var(--s-0)/1.5 var(--sans);color:var(--muted);margin-bottom:16px}
+.work p{max-width:33em}
+code{font-family:ui-monospace,Menlo,Consolas,monospace;font-size:.88em}
+.work p+p{margin-top:.9em}
+.work .tech{font:400 var(--s-0)/1.5 var(--sans);color:var(--muted);margin-top:16px;max-width:44em}
+.work .tech b{font-weight:600;color:var(--ink)}
+.num{font-variant-numeric:lining-nums tabular-nums}
 
-/* Filtros */
-.filters{display:flex;gap:8px;flex-wrap:wrap}
-.filters button{font-family:var(--mono);font-size:.78rem;padding:6px 12px;border-radius:999px;border:1px solid var(--line);background:var(--surface);color:var(--ink);cursor:pointer}
-.filters button[aria-pressed="true"]{background:var(--ink);color:var(--bg);border-color:var(--ink)}
+/* índice de sistemas menores */
+.index li{display:grid;grid-template-columns:minmax(0,15em) minmax(0,1fr);gap:4px 32px;padding:14px 0;border-top:1px solid var(--line)}
+.index li:first-child{border-top:0;padding-top:0}
+.index strong{font:600 var(--s-1)/1.4 var(--sans)}
+.index span{display:block;font-size:var(--s-1);line-height:1.55;color:var(--muted)}
+.index .links{font:500 var(--s-0)/1.4 var(--sans)}
 
-/* Projetos */
-.featured{display:grid;gap:20px}
-.case{background:var(--surface);border:1px solid var(--line);border-radius:12px;padding:28px;display:grid;grid-template-columns:1.5fr 1fr;gap:28px}
-.case h3{font-size:1.5rem;font-weight:700;margin:6px 0 10px}
-.case p{margin:0 0 12px;max-width:62ch}
-.case ul{margin:0;padding-left:18px;display:grid;gap:6px}
-.case aside{border-left:1px solid var(--line);padding-left:24px;display:grid;gap:18px;align-content:start;min-width:0}
-.result b{font-family:var(--display);font-size:1.6rem;color:var(--warm);display:block;line-height:1.1;font-variant-numeric:tabular-nums}
-.result span{font-size:.85rem;color:var(--muted)}
-.stack{display:flex;flex-wrap:wrap;gap:6px}
-.stack i{font-style:normal;font-family:var(--mono);font-size:.72rem;padding:3px 8px;border-radius:4px;background:var(--accent-soft);color:var(--ink)}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:20px}
-.card{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:20px;display:flex;flex-direction:column;gap:10px;min-width:0}
-.card h3{font-size:1.12rem;font-weight:700}
-.card p{margin:0;font-size:.93rem;color:var(--muted);flex:1}
-.card .go{font-family:var(--mono);font-size:.8rem}
-.also{margin:24px 0 0;display:flex;gap:10px;flex-wrap:wrap;align-items:baseline;font-size:.93rem;color:var(--muted)}
-.tag{font-family:var(--mono);font-size:.7rem;letter-spacing:.06em;text-transform:uppercase;color:var(--accent)}
+/* trajetória */
+.job{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:4px 24px;padding:14px 0;border-top:1px solid var(--line)}
+.job:first-child{border-top:0;padding-top:0}
+.job time{font:400 var(--s-0)/1.6 var(--sans);color:var(--muted)}
+.job h3{font:600 var(--s-1)/1.4 var(--sans)}
+.job h3 span{font-weight:400;color:var(--muted)}
+.job p{font-size:var(--s-1);line-height:1.55;margin-top:2px;max-width:40em}
+.group{font:600 var(--s-0)/1.4 var(--sans);color:var(--muted);padding:28px 0 12px}
+.group:first-child{padding-top:0}
 
-/* Open source */
-.oss{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
-.repo{border:1px solid var(--line);border-radius:10px;padding:20px;display:grid;gap:8px;background:var(--surface);min-width:0}
-.repo h3{font-family:var(--mono);font-size:1rem;font-weight:500}
-.repo p{margin:0;font-size:.93rem;color:var(--muted)}
-.repo .facts{font-family:var(--mono);font-size:.75rem;color:var(--ink)}
+/* competências */
+.skills div{display:grid;grid-template-columns:9.5em minmax(0,1fr);gap:4px 24px;padding:10px 0;border-top:1px solid var(--line)}
+.skills div:first-child{border-top:0;padding-top:0}
+.skills dt{font:600 var(--s-0)/1.6 var(--sans)}
+.skills dd{font-size:var(--s-1);line-height:1.55}
 
-/* Linha do tempo */
-.timeline{display:grid;gap:0}
-.job{display:grid;grid-template-columns:170px 1fr;gap:24px;padding-block:18px;border-bottom:1px dashed var(--line)}
-.job:last-child{border-bottom:0}
-.job time{font-family:var(--mono);font-size:.82rem;color:var(--muted);font-variant-numeric:tabular-nums;padding-top:3px}
-.job h3{font-size:1.1rem;font-weight:700}
-.job h3 small{font-family:var(--body);font-weight:400;color:var(--muted);font-size:.95rem}
-.job p{margin:4px 0 0;font-size:.94rem;max-width:70ch}
+footer{border-top:1px solid var(--line);padding:48px 0 72px;display:grid;grid-template-columns:200px minmax(0,1fr);column-gap:48px}
+footer p{max-width:34em}
+footer .contact{margin-top:20px}
 
-/* Competências */
-.skills{display:grid;grid-template-columns:repeat(5,1fr);gap:16px}
-.skills div{min-width:0}
-.skills h3{font-family:var(--mono);font-size:.78rem;font-weight:500;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:8px}
-.skills p{margin:0;font-size:.92rem}
 
-footer{padding-block:48px 64px;border-top:1px solid var(--line);display:flex;justify-content:space-between;gap:24px;flex-wrap:wrap;align-items:end}
-footer h2{font-size:clamp(1.6rem,4vw,2.6rem);font-weight:800;max-width:20ch}
-footer .links{display:grid;gap:6px;font-family:var(--mono);font-size:.9rem}
+/* abertura com painel */
+.hero{display:grid;grid-template-columns:minmax(0,1.15fr) minmax(0,1fr);gap:48px;align-items:end}
+.trace{background:#14161a;color:#e8e9eb;border-radius:6px;padding:20px 22px;font:400 .875rem/1.75 ui-monospace,Menlo,Consolas,monospace;overflow-x:auto;border:1px solid #2d3138}
+.trace .cap{font:600 .875rem/1.4 var(--sans);color:#a0a5ad;margin:0 0 12px;max-width:none}
+.trace dl{display:grid;grid-template-columns:5.5em minmax(0,1fr);gap:0 16px;margin:0}
+.trace dt{color:#a0a5ad}
+.trace dd{margin:0;overflow-wrap:anywhere}
+.trace .ok{color:#e08a74}
+.trace hr{border:0;border-top:1px solid #2d3138;margin:12px 0}
 
-@media (max-width:860px){
-  .hero,.case{grid-template-columns:1fr}
-  .case aside{border-left:0;border-top:1px solid var(--line);padding-left:0;padding-top:20px}
-  .grid,.oss{grid-template-columns:1fr 1fr}
-  .metrics{grid-template-columns:1fr 1fr}
-  .skills{grid-template-columns:1fr 1fr}
+/* diagramas de fluxo (HTML, reflowam no celular) */
+.flow{display:grid;grid-auto-flow:column;grid-auto-columns:minmax(0,1fr);gap:0;margin:28px 0 0;counter-reset:step}
+.flow li{position:relative;padding:14px 16px 14px 0;border-top:2px solid var(--ink);counter-increment:step}
+.flow li+li{padding-left:16px}
+.flow li.gate{border-top-color:var(--accent)}
+.flow b{display:block;font:600 var(--s-0)/1.35 var(--sans)}
+.flow span{display:block;font:400 var(--s-0)/1.45 var(--sans);color:var(--muted);margin-top:2px}
+.flow li::before{content:counter(step);display:block;font:600 var(--s-0)/1 var(--sans);color:var(--accent);margin-bottom:8px}
+.fig{margin:32px 0 0}
+.fig figcaption{font:400 var(--s-0)/1.5 var(--sans);color:var(--muted);margin-top:10px;max-width:44em}
+.shot{border:1px solid var(--line);border-radius:6px;overflow:hidden;background:var(--bg)}
+.shot .bar{display:flex;gap:6px;padding:10px 12px;border-bottom:1px solid var(--line)}
+.shot .bar i{width:9px;height:9px;border-radius:50%;background:var(--line)}
+.shot img{display:block;width:101.2%;max-width:none;height:auto}
+.fan{display:block;width:100%;max-width:560px;height:auto}
+.fan .ax{stroke:var(--line);stroke-width:1.5}
+.fan .band{fill:var(--accent);fill-opacity:.16;stroke:none}
+.fan .mid{fill:none;stroke:var(--accent);stroke-width:2.5;stroke-linejoin:round}
+.split{display:grid;grid-template-columns:minmax(0,1fr) 250px;gap:8px 40px;align-items:start}
+.split .fig{margin:0}
+.split .fig img{display:block;width:100%;height:auto;border-radius:6px;border:1px solid #2d3138}
+
+@media (max-width:820px){
+  section,footer{grid-template-columns:minmax(0,1fr);padding:36px 0}
+  section>h2{position:static;padding:0 0 20px}
+  .index li{grid-template-columns:minmax(0,1fr)}
+  .job,.skills div{grid-template-columns:minmax(0,1fr)}
+  .work h3{font-size:var(--s-3)}
+  .hero,.split{grid-template-columns:minmax(0,1fr)}
+  .hero{gap:36px}
+  .flow{grid-auto-flow:row}
+  .flow li,.flow li+li{padding:12px 0 12px 0;border-top-width:1px}
+  .flow li.gate{border-top-width:2px}
 }
-@media (max-width:560px){
-  .grid,.oss,.skills{grid-template-columns:1fr}
-  .job{grid-template-columns:1fr;gap:4px}
-  .case{padding:20px}
-}
-@media (prefers-reduced-motion:no-preference){
-  .card,.case,.repo{transition:border-color .2s}
-  .card:hover,.case:hover,.repo:hover{border-color:var(--accent)}
+@media print{
+  body{background:#fff;color:#000}
+  section>h2{position:static}
 }
 </style>
-<style>body{margin:0}</style>
 </head>
 <body>
+<div class="page">
 
-
-<div class="wrap">
-  <header class="hero">
-    <div>
-      <div class="label">Portfólio · Belo Horizonte, MG</div>
-      <h1>Rafael <span>Menezes</span></h1>
-      <div class="role">Engenheiro de Software Full Stack Sênior · fundador da RM Digital Solutions</div>
-      <p class="thesis">Construo produtos do zero até a produção: frontend em React e Next.js, APIs em NestJS e Java/Spring, PostgreSQL multi-tenant e infraestrutura AWS. Hoje tenho sistemas SaaS rodando no Brasil, nos EUA e na Itália, incluindo módulos de IA generativa com AWS Bedrock.</p>
-    </div>
-    <div class="contact-card">
-      <span class="status">Disponível para projetos e conversas</span>
-      <div class="row"><span class="val" id="email">ctpmmg2009_101@hotmail.com</span><button class="copy" id="copy-email" type="button">copiar</button></div>
-      <div class="row"><a class="val" href="https://www.linkedin.com/in/alfafisteles" target="_blank" rel="noopener">linkedin.com/in/alfafisteles</a></div>
-      <div class="row"><a class="val" href="https://github.com/Alfafis" target="_blank" rel="noopener">github.com/Alfafis</a></div>
-    </div>
-  </header>
-
-  <div class="metrics" aria-label="Números de projetos">
-    <div class="metric"><b>10+ anos</b><span>em tecnologia, de UX a infraestrutura</span></div>
-    <div class="metric"><b>150 mil</b><span>SKUs migrados do WooCommerce sem perder SEO</span></div>
-    <div class="metric"><b>152 → 26 ms</b><span>de latência no CRM após mudança de região</span></div>
-    <div class="metric"><b>3 países</b><span>com SaaS em produção: Brasil, EUA e Itália</span></div>
+<header class="hero">
+  <div>
+    <h1>Rafael Menezes</h1>
+    <p class="role">Engenheiro de IA e desenvolvedor full stack · Belo Horizonte, MG</p>
+    <p class="lede">Projeto agentes de IA e a base de software que os sustenta, e os coloco em produção: tool calling, RAG, guardrails em código e telemetria, sobre TypeScript, Python, PostgreSQL e AWS. Atuo na Cogna e na minha consultoria, a RM Digital Solutions.</p>
+    <p class="contact">
+      <a href="mailto:ctpmmg2009_101@hotmail.com">ctpmmg2009_101@hotmail.com</a>
+      <a href="https://www.linkedin.com/in/alfafisteles" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Alfafis" target="_blank" rel="noopener">GitHub</a>
+    </p>
   </div>
+  <figure class="fig" style="margin:0" aria-label="Estrutura do registro de decisão de um dos meus agentes">
+    <div class="trace">
+      <p class="cap">Registro de decisão do agente Vega (estrutura)</p>
+      <dl>
+        <dt>ativo</dt><dd>&lt;ticker&gt;</dd>
+        <dt>ação</dt><dd>entrada simulada</dd>
+        <dt>preço</dt><dd>&lt;cotação e horário&gt;</dd>
+        <dt>tese</dt><dd>&lt;uma frase&gt;</dd>
+        <dt>stop</dt><dd>&lt;coerente com a entrada&gt;</dd>
+        <dt>fonte</dt><dd>&lt;URL e data&gt;</dd>
+      </dl>
+      <hr>
+      <dl>
+        <dt>ledger</dt><dd>histórico consultado antes de decidir</dd>
+        <dt>sem dado</dt><dd class="ok">«não verificado»</dd>
+        <dt>execução</dt><dd class="ok">real só com confirmação explícita</dd>
+      </dl>
+    </div>
+  </figure>
+</header>
 
-  <section id="projetos">
-    <div class="head">
-      <h2>Projetos em destaque</h2>
-      <div class="filters" role="group" aria-label="Filtrar projetos">
-        <button type="button" data-f="all" aria-pressed="true">Todos</button>
-        <button type="button" data-f="ia" aria-pressed="false">IA</button>
-        <button type="button" data-f="saas" aria-pressed="false">SaaS multi-tenant</button>
-        <button type="button" data-f="ecom" aria-pressed="false">E-commerce</button>
-        <button type="button" data-f="saude" aria-pressed="false">Saúde</button>
+<main>
+
+<section id="ia">
+  <h2>IA aplicada</h2>
+  <div class="body">
+
+    <article class="work">
+      <h3>Módulo de IA da World Automation Store</h3>
+      <p class="meta">Cliente na Itália, e-commerce B2B de automação industrial · 2025 até hoje</p>
+      <p>Motor de agentes e flows configuráveis sobre AWS Bedrock (Claude). Os prompts ficam no banco e se editam sem deploy; as chamadas de ferramenta passam pela Converse API e as respostas chegam por streaming SSE. O sistema enriquece, traduz e categoriza produtos cruzando fontes reais, como DigiKey e SerpApi.</p>
+      <p>Os guardrails estão no código, não no prompt: revisão humana campo a campo, categoria restrita à taxonomia existente, casamento de peça por MPN normalizado e a regra de usar foto real primeiro. Num lote de <span class="num">33 mil</span> nomes traduzidos por agentes em paralelo (<span class="num">77</span> lotes), detectei alucinação de IDs e passei a validar cada resposta pela posição da linha. Há também validação diária de disponibilidade dos modelos e telemetria de tokens e latência por chamada.</p>
+      <p class="tech"><b>Stack:</b> NestJS, AWS Bedrock, PostgreSQL, Drizzle, SSE · <a href="https://www.worldautomationstore.com" target="_blank" rel="noopener">worldautomationstore.com</a></p>
+      <ol class="flow" aria-label="Fluxo de enriquecimento de produto">
+        <li><b>Fontes reais</b><span>DigiKey e SerpApi</span></li>
+        <li><b>Agente</b><span>Bedrock, tool calling, prompts no banco</span></li>
+        <li class="gate"><b>Guardrails em código</b><span>taxonomia, MPN, foto real primeiro</span></li>
+        <li class="gate"><b>Revisão humana</b><span>campo a campo</span></li>
+        <li><b>Catálogo</b><span>publicado na loja</span></li>
+      </ol>
+      <figure class="fig">
+        <div class="shot"><div class="bar" aria-hidden="true"><i></i><i></i><i></i></div><img src="img/was-loja-recorte.jpg" width="840" height="520" loading="lazy" alt="Página inicial da World Automation Store: barra de busca por código de peça, menu de categorias e chamada principal"></div>
+        <figcaption>A loja em produção, onde o catálogo enriquecido é publicado.</figcaption>
+      </figure>
+    </article>
+
+    <article class="work">
+      <h3>Time de agentes de investimentos</h3>
+      <p class="meta">Projeto próprio · paper trading na B3, sem dinheiro real</p>
+      <p>Três agentes com papéis separados no OpenMausBot, plataforma open source de agentes. O Ticker coleta dados separando fato de opinião, sempre com fonte e data. O Vega decide entradas e saídas simuladas e registra ticker, preço, tese, stop e fonte. O Ledger guarda o histórico, devolve contexto ao Vega antes de cada decisão e mede o desempenho: taxa de acerto, retorno contra CDI e Ibovespa, drawdown. Sem dado, ele reporta «não verificado» em vez de inventar.</p>
+      <p>O time hoje tem especialistas (gráfico, fundamentalista, sentimento, otimista e pessimista) e um ciclo de aprendizado: playbooks, lições e um placar que realimentam os agentes. Por trás, um servidor MCP próprio com <span class="num">23</span> ferramentas e <span class="num">6</span> rotinas agendadas rodando Claude Code em modo headless. Um experimento de cinco dias úteis expôs <span class="num">9</span> falhas de orquestração; corrigi as críticas (idempotência de trades, vetos dentro da ferramenta, allowlist de tools) e cobri o sistema com <span class="num">84</span> testes.</p>
+      <p class="tech"><b>Stack:</b> Python, FastAPI, MCP, PostgreSQL, Redis, Claude</p>
+    </article>
+
+    <article class="work split">
+      <div>
+      <h3>Plugins para Claude Code</h3>
+      <p class="meta">Open source</p>
+      <p><a href="https://github.com/Alfafis/critique" target="_blank" rel="noopener">critique</a> foi aprovado no marketplace da comunidade da Anthropic: usa hooks de ciclo de vida da sessão, funciona em quatro idiomas, não tem dependências externas e tem <span class="num">208</span> testes com CI em Linux, macOS e Windows. <a href="https://github.com/Alfafis/cc-token-statusline" target="_blank" rel="noopener">cc-token-statusline</a> mostra tokens, contexto e cota lendo o transcript de forma incremental, em Python só com a biblioteca padrão. <a href="https://github.com/Alfafis/claude-mods" target="_blank" rel="noopener">claude-mods</a> reúne outros plugins (crew, meter, notify, filetree) com releases versionadas, CI, branch protegida e política de segurança.</p>
       </div>
+      <figure class="fig"><img src="img/meter.png" width="506" height="1030" loading="lazy" alt="Painel do plugin meter no terminal: uso de contexto por categoria, custo da sessão e limites de uso"><figcaption>meter: contexto por categoria, custo e limites da sessão.</figcaption></figure>
+    </article>
+
+    <article class="work">
+      <h3>Cogna</h3>
+      <p class="meta">Engenheiro de IA, via RM Digital · out/2026 até hoje</p>
+      <p>Observabilidade de fluxos de IA e de APIs com Datadog, a partir de logs e métricas das respostas. Desenvolvimento nos produtos Emprega.ai, GPS e Genoma, em Next.js, NestJS e Python/FastAPI com PostgreSQL.</p>
+    </article>
+
+  </div>
+</section>
+
+<section id="sistemas">
+  <h2>Sistemas em produção</h2>
+  <div class="body">
+
+    <article class="work">
+      <h3>CRM white label multi-tenant</h3>
+      <p class="meta">No ar desde ago/2026</p>
+      <p>Defini a arquitetura e entreguei backend, frontend e infraestrutura de um CRM que cada cliente vende como marca própria. O isolamento de tenant tem duas camadas: <code>tenant_id</code> na aplicação e RLS no PostgreSQL. Filas com Redis e BullMQ, auditoria por trigger, integrações com ERP, telefonia e WhatsApp, decisões registradas em ADRs e features novas atrás de flag.</p>
+      <p>Na borda, Kong com certificados ACME; a infraestrutura roda como código, com firewall endurecido e deploy por workflow manual. Trocar a região de hospedagem baixou a latência de <span class="num">152 ms</span> para <span class="num">26 ms</span>.</p>
+      <p class="tech"><b>Stack:</b> NestJS 11, PostgreSQL com RLS, BullMQ, Redis, Kong</p>
+      <ol class="flow" aria-label="Isolamento de tenant em duas camadas">
+        <li><b>Borda</b><span>Kong, certificados ACME</span></li>
+        <li class="gate"><b>Camada 1: aplicação</b><span><code>tenant_id</code> em toda consulta</span></li>
+        <li class="gate"><b>Camada 2: banco</b><span>RLS no PostgreSQL</span></li>
+        <li><b>Auditoria</b><span>por trigger</span></li>
+      </ol>
+    </article>
+
+    <article class="work">
+      <h3>World Automation Store, a loja</h3>
+      <p class="meta">2025 até hoje</p>
+      <p>Reconstruí do zero a loja que rodava em WordPress e WooCommerce: frontend em Next.js 15 no Cloudflare Pages, API em NestJS com Drizzle e PostgreSQL, infraestrutura AWS em Terraform (ECS Fargate, RDS, CloudFront, S3, SES). O catálogo tem <span class="num">150 mil</span> SKUs, e o SEO foi preservado com redirecionamentos 301/410 e sitemap segmentado.</p>
+    </article>
+
+    <article class="work">
+      <h3>Be Planned</h3>
+      <p class="meta">Setor de mineração</p>
+      <p>SaaS de simulação Monte Carlo para provisionar custos de fechamento de mina. O motor roda <span class="num">10 mil</span> iterações por simulação, entrega faixas P10 e P90 e corrige valores por IPCA. O portal do cliente gera relatório em PDF e tem 2FA por TOTP e fluxos de LGPD.</p>
+      <figure class="fig">
+        <svg class="fan" viewBox="0 0 600 220" role="img" aria-label="Ilustração de um resultado de simulação Monte Carlo: faixa entre os percentis P10 e P90 que se abre ao longo do tempo, com a mediana no meio">
+          <line class="ax" x1="40" y1="190" x2="580" y2="190"/>
+          <line class="ax" x1="40" y1="20" x2="40" y2="190"/>
+          <polygon class="band" points="40,150 140,138 240,122 340,102 440,80 540,56 540,128 440,134 340,138 240,142 140,146 40,152"/>
+          <polyline class="mid" points="40,151 140,142 240,132 340,120 440,107 540,92"/>
+        </svg>
+        <figcaption>Formato do resultado: a faixa entre P10 e P90 e a mediana ao longo do tempo. Ilustração com dados fictícios, não é de um cliente real.</figcaption>
+      </figure>
+    </article>
+
+    <article class="work">
+      <h3>ToBe</h3>
+      <p class="meta">Plataforma educacional multi-tenant · <a href="https://plataforma.educacionaltobe.tech" target="_blank" rel="noopener">ver plataforma</a></p>
+      <p>Reescrevi o backend de Fastify e Prisma para NestJS e Drizzle. O Postgres usa RLS com roles sem BYPASSRLS, as filas rodam em pg-boss e o upload de vídeo passa por um proxy TUS em streaming.</p>
+    </article>
+
+    <article class="work">
+      <h3>Plataforma de vendas em lives</h3>
+      <p class="meta">Para uma rede de lojas · multi-tenant</p>
+      <p>O comentário no Instagram ou no TikTok vira reserva, com fila, sacolinha e bipagem entre unidades. Já opera com pedidos reais, com CSP bloqueante, 41 testes e CI.</p>
+    </article>
+
+    <div class="work">
+      <h3 class="sans" style="font:600 var(--s-0)/1.4 var(--sans);color:var(--muted);margin-bottom:20px">Outros sistemas</h3>
+      <ul class="index">
+        <li><strong>Senhas e filas para saúde</strong><span>White label com totem, painel de TV e operador, domínio próprio por cliente, fila concorrente com <code>SKIP LOCKED</code> e assinatura recorrente via Asaas. Na Unimed Pouso Alegre (MG), com avaliação em tablet e Supabase Realtime.</span></li>
+        <li><strong>E-commerces de varejo</strong><span>Vendas reais com cartão, boleto e Pix (MaxiPago, Asaas), frete pelo Melhor Envio, MFA obrigatório para a equipe, CSP e LGPD.</span></li>
+        <li><strong>CondeNexo</strong><span>Controle de acesso para condomínios, com trilha de auditoria em hash chain e fluxos de LGPD.<a class="links" href="https://github.com/Alfafis/CondeNexo.Api" target="_blank" rel="noopener">código da API</a> <a class="links" href="https://github.com/Alfafis/CondeNexo.Front" target="_blank" rel="noopener" style="margin-left:20px">código do frontend</a></span></li>
+        <li><strong>CRM BeTech</strong><span>CRM de prospecção com mapa, gestão de leads e WhatsApp.<a class="links" href="https://crm.betechdev.com.br" target="_blank" rel="noopener">ver aplicação</a></span></li>
+        <li><strong>RM Schedule</strong><span>Agendamentos com assinatura recorrente.<a class="links" href="https://schedule.rmdigitalsolutions.org" target="_blank" rel="noopener">ver aplicação</a></span></li>
+        <li><strong>Zapflow</strong><span>Produto próprio, hoje pausado: SaaS multi-tenant de WhatsApp com dois provedores (Meta Cloud API e Baileys), webhooks assinados com HMAC, segredos em AES-256-GCM e cobrança pelo Mercado Pago.</span></li>
+      </ul>
     </div>
 
-    <div class="featured">
-      <article class="case" data-tags="ia ecom">
-        <div>
-          <div class="tag">Cliente na Itália · B2B de automação industrial</div>
-          <h3>World Automation Store</h3>
-          <p>Reconstruí do zero a loja que rodava em WordPress/WooCommerce. Frontend em Next.js 15 no Cloudflare Pages, API em NestJS com Drizzle e PostgreSQL, e infraestrutura AWS em Terraform.</p>
-          <ul>
-            <li>Módulo de IA com AWS Bedrock (Claude): agentes e flows configuráveis, prompts no banco editáveis sem deploy, tool calling pela Converse API e streaming por SSE.</li>
-            <li>Enriquecimento, tradução e categorização de produtos com fontes reais (DigiKey, SerpApi).</li>
-            <li>Guardrails contra alucinação: revisão humana campo a campo, taxonomia fechada, casamento por MPN normalizado e regra de foto real primeiro aplicada em código.</li>
-            <li>SEO preservado com redirecionamentos 301/410 e sitemap segmentado.</li>
-          </ul>
-          <p style="margin-top:12px"><a href="https://www.worldautomationstore.com" target="_blank" rel="noopener">worldautomationstore.com</a></p>
-        </div>
-        <aside>
-          <div class="result"><b>150 mil SKUs</b><span>catálogo migrado</span></div>
-          <div class="result"><b>33 mil nomes</b><span>traduzidos por agentes em 77 lotes paralelos, com validação por linha</span></div>
-          <div class="stack"><i>Next.js 15</i><i>React 19</i><i>NestJS</i><i>Drizzle</i><i>PostgreSQL</i><i>Bedrock</i><i>Stripe</i><i>Terraform</i><i>ECS Fargate</i><i>CloudFront</i></div>
-        </aside>
-      </article>
+  </div>
+</section>
 
-      <article class="case" data-tags="saas">
-        <div>
-          <div class="tag">Em produção desde ago/2026</div>
-          <h3>CRM white label multi-tenant</h3>
-          <p>Defini a arquitetura e entreguei backend, frontend e infra de um CRM vendido como marca própria por cada cliente.</p>
-          <ul>
-            <li>Isolamento de tenant em duas camadas: <code>tenant_id</code> na aplicação e RLS no PostgreSQL.</li>
-            <li>Filas Redis/BullMQ, auditoria por trigger e integrações com ERP, telefonia e WhatsApp.</li>
-            <li>Edge com Kong.</li>
-          </ul>
-        </div>
-        <aside>
-          <div class="result"><b>152 → 26 ms</b><span>de latência após a mudança de região</span></div>
-          <div class="stack"><i>NestJS 11</i><i>PostgreSQL RLS</i><i>BullMQ</i><i>Redis</i><i>Kong</i></div>
-        </aside>
-      </article>
+<section id="trajetoria">
+  <h2>Trajetória</h2>
+  <div class="body">
+    <p class="group">Consultoria PJ · RM Digital Solutions, desde jun/2021</p>
+    <ul>
+      <li class="job"><time>out/2026 – hoje</time><div><h3>Cogna <span>· Engenheiro de IA</span></h3><p>Observabilidade de fluxos de IA com Datadog e desenvolvimento em Emprega.ai, GPS e Genoma.</p></div></li>
+      <li class="job"><time>abr – set/2026</time><div><h3>Petz <span>· Engenheiro de Software Frontend Sênior</span></h3><p>Integração de um plano de saúde aos fluxos de agendamento e histórico. Propus mudanças de contrato de BFF que as squads de frontend e backend adotaram.</p></div></li>
+      <li class="job"><time>jun – dez/2022</time><div><h3>ProAK <span>· EUA, SaaS de criptoativos</span></h3><p>Full stack sênior. Reduzi em 60% o tempo de resposta de consultas e pipelines de dados e desenhei APIs com stakeholders americanos, em inglês.</p></div></li>
+      <li class="job"><time>jun – dez/2021</time><div><h3>Atlas Finance e Vênus Checkout <span>· EUA</span></h3><p>Na Atlas, arquitetura de microsserviços, Scrum e CI/CD. Na Vênus, arquitetura AWS com Cloudflare e cerca de 30% menos custo de cloud.</p></div></li>
+    </ul>
+    <p class="group">Empregos CLT, em paralelo à consultoria</p>
+    <ul>
+      <li class="job"><time>ago/2024 – set/2025</time><div><h3>Itaú Unibanco <span>· Analista de Engenharia de TI</span></h3><p>Produto interno da vertical de seguros, do zero à v1 em produção (React, Python, Java). Novas camadas de API REST na modernização de legados, com 35% menos tempo médio de resposta.</p></div></li>
+      <li class="job"><time>dez/2022 – jan/2024</time><div><h3>Grupo Boticário <span>· Developer II</span></h3><p>Um de dois engenheiros frontend da plataforma de logística. Migração de monolito para microsserviços, com 40% menos tempo de deploy.</p></div></li>
+      <li class="job"><time>nov/2021 – set/2022</time><div><h3>Loft <span>· Software Engineer Front End</span></h3><p>Módulo de listagem de imóveis, com 13 mil imóveis e 30 mil corretores. Performance, page speed e componentes React testados.</p></div></li>
+    </ul>
+    <p class="group">Antes, 2015 a 2021</p>
+    <ul>
+      <li class="job"><time>2015 – 2021</time><div><h3>dti digital, Getrak e Axxiom <span>· frontend e full stack</span></h3><p>React, Vue/Nuxt e React Native. Na Axxiom, fui por quatro anos o dono do GDIS, sistema da Cemig em Vue.js com mais de 200 usuários internos.</p></div></li>
+    </ul>
+  </div>
+</section>
 
-      <article class="case" data-tags="saas">
-        <div>
-          <div class="tag">Setor de mineração · em produção</div>
-          <h3>Be Planned</h3>
-          <p>SaaS de simulação Monte Carlo para provisionar custos de fechamento de mina.</p>
-          <ul>
-            <li>Motor com 10 mil iterações, faixas P10/P90 e correção por IPCA.</li>
-            <li>Portal do cliente com relatório em PDF, 2FA TOTP e fluxos LGPD.</li>
-          </ul>
-        </div>
-        <aside>
-          <div class="result"><b>10.000</b><span>iterações por simulação</span></div>
-          <div class="stack"><i>Monte Carlo</i><i>PDF</i><i>2FA TOTP</i><i>LGPD</i></div>
-        </aside>
-      </article>
+<section id="competencias">
+  <h2>Competências</h2>
+  <div class="body">
+    <dl class="skills">
+      <div><dt>IA</dt><dd>AWS Bedrock (Claude), tool calling, streaming SSE, agentes e multiagente, guardrails e human-in-the-loop, RAG e memória de agente, avaliação de agentes, observabilidade de LLM com Datadog, MCP (servidor e cliente), plugins, hooks e skills do Claude Code</dd></div>
+      <div><dt>Linguagens</dt><dd>TypeScript e JavaScript, Python</dd></div>
+      <div><dt>Backend</dt><dd>NestJS, Node.js, FastAPI, REST, filas (BullMQ, pg-boss, SQS)</dd></div>
+      <div><dt>Frontend</dt><dd>React, Next.js, TanStack Query, Tailwind, Jest e RTL, Cypress</dd></div>
+      <div><dt>Dados</dt><dd>PostgreSQL (RLS, multi-tenant), Drizzle, Redis, Supabase</dd></div>
+      <div><dt>Infraestrutura</dt><dd>AWS (ECS, EKS, Lambda, RDS), Terraform, Docker, Kubernetes, Cloudflare, CI/CD</dd></div>
+      <div><dt>Formação</dt><dd>Pós em Engenharia de Software em IA Aplicada (UNIPDS, em andamento) · Pós em Engenharia de Software (Descomplica, 2023) · Bacharel em Ciência da Computação (UniBH, 2021)</dd></div>
+    </dl>
+  </div>
+</section>
 
-      <article class="case" data-tags="ecom saude">
-        <div>
-          <div class="tag">Petz · Frontend Sênior · abr–ago 2026</div>
-          <h3>Plano de saúde pet no agendamento</h3>
-          <p>Integrei o plano Seres Saúde aos fluxos de agendamento, reagendamento e histórico, com cobertura, preço derivado e fallbacks de BFF.</p>
-          <ul>
-            <li>Propus mudanças de contrato de BFF adotadas pelas squads de frontend e backend.</li>
-            <li>Corrigi uma falha de autenticação no carregamento inicial com injeção dinâmica do JWT.</li>
-          </ul>
-        </div>
-        <aside>
-          <div class="result"><b>2,8 milhões</b><span>de clientes ativos na plataforma</span></div>
-          <div class="stack"><i>Next.js</i><i>Redux</i><i>Cypress</i><i>Kubernetes</i><i>Trunk-based</i></div>
-        </aside>
-      </article>
-    </div>
+</main>
 
-    <div class="grid">
-      <article class="card" data-tags="saas">
-        <div class="tag">Educação · multi-tenant</div>
-        <h3>ToBe</h3>
-        <p>Plataforma educacional multi-tenant. Reescrevi o backend de Fastify + Prisma para NestJS + Drizzle, com RLS no Postgres sem BYPASSRLS, filas pg-boss e upload de vídeo por proxy TUS.</p>
-        <div class="stack"><i>NestJS</i><i>Drizzle</i><i>RLS</i><i>TUS</i></div>
-        <a class="go" href="https://plataforma.educacionaltobe.tech" target="_blank" rel="noopener">Ver plataforma ↗</a>
-      </article>
-      <article class="card" data-tags="saas">
-        <div class="tag">CRM · prospecção</div>
-        <h3>CRM BeTech</h3>
-        <p>CRM de prospecção com mapa, gestão de leads e integração com WhatsApp.</p>
-        <div class="stack"><i>Mapa</i><i>Leads</i><i>WhatsApp</i></div>
-        <a class="go" href="https://crm.betechdev.com.br" target="_blank" rel="noopener">Ver app ↗</a>
-      </article>
-      <article class="card" data-tags="saas">
-        <div class="tag">Condomínios · LGPD</div>
-        <h3>CondNexo</h3>
-        <p>SaaS de controle de acesso para condomínios, com trilha de auditoria em hash chain e fluxos LGPD.</p>
-        <div class="stack"><i>Hash chain</i><i>Auditoria</i><i>LGPD</i></div>
-        <span class="go"><a href="https://github.com/Alfafis/CondeNexo.Api" target="_blank" rel="noopener">API ↗</a> · <a href="https://github.com/Alfafis/CondeNexo.Front" target="_blank" rel="noopener">Front ↗</a></span>
-      </article>
-      <article class="card" data-tags="saas">
-        <div class="tag">Produto próprio · assinatura</div>
-        <h3>RM Schedule</h3>
-        <p>Sistema de agendamentos com assinatura recorrente.</p>
-        <div class="stack"><i>React</i><i>Supabase</i><i>Recorrência</i></div>
-        <a class="go" href="https://schedule.rmdigitalsolutions.org" target="_blank" rel="noopener">Ver app ↗</a>
-      </article>
-      <article class="card" data-tags="saas">
-        <div class="tag">Produto próprio · WhatsApp</div>
-        <h3>Zapflow</h3>
-        <p>SaaS multi-tenant de WhatsApp com Meta Cloud API e Baileys, webhooks assinados com HMAC, segredos em AES-256-GCM e cobrança via Mercado Pago.</p>
-        <div class="stack"><i>WhatsApp</i><i>HMAC</i><i>Mercado Pago</i></div>
-        <a class="go" href="https://zapflow.rmdigitalsolutions.org" target="_blank" rel="noopener">Ver app ↗</a>
-      </article>
-      <article class="card" data-tags="saas saude">
-        <div class="tag">Saúde · white label</div>
-        <h3>Senhas e filas para unidades de saúde</h3>
-        <p>Totem, painel de TV e operador, com domínio próprio por cliente, fila concorrente com <code>SKIP LOCKED</code> e assinatura recorrente via Asaas.</p>
-        <div class="stack"><i>PostgreSQL</i><i>SKIP LOCKED</i><i>Asaas</i></div>
-      </article>
-      <article class="card" data-tags="saude">
-        <div class="tag">Saúde · tempo real</div>
-        <h3>Unimed Pouso Alegre (MG)</h3>
-        <p>Sistema de senhas com totem, painel de TV e avaliação em tablet, sincronizado em tempo real com Supabase Realtime.</p>
-        <div class="stack"><i>Supabase Realtime</i><i>React</i></div>
-      </article>
-      <article class="card" data-tags="ecom">
-        <div class="tag">E-commerce · vendas reais</div>
-        <h3>E-commerces de varejo</h3>
-        <p>Cartão, boleto e Pix (MaxiPago, Asaas), frete via Melhor Envio, MFA para a equipe, CSP e LGPD. Corrigi uma RPC exposta a anônimos que vazava dados de clientes.</p>
-        <div class="stack"><i>Pix</i><i>Melhor Envio</i><i>CSP</i></div>
-      </article>
-      <article class="card" data-tags="ecom">
-        <div class="tag">Em desenvolvimento</div>
-        <h3>Vendas em lives</h3>
-        <p>Para uma rede de 4 lojas: o comentário no Instagram ou TikTok vira reserva, com fila, sacolinha e bipagem entre unidades.</p>
-        <div class="stack"><i>Instagram</i><i>TikTok</i><i>Filas</i></div>
-      </article>
-    </div>
-    <p class="also"><span class="label">Outros sites</span> <a href="https://rmdigitalsolutions.org/" target="_blank" rel="noopener">RM Digital Solutions</a>, landing page institucional · <a href="https://casamento-store-green.vercel.app" target="_blank" rel="noopener">Casamento Rafa &amp; Isa</a>, site com RSVP e lista de presentes</p>
-  </section>
+<footer>
+  <h2 class="sans" style="font:600 var(--s-0)/1.4 var(--sans);color:var(--muted)">Contato</h2>
+  <div>
+    <p>Para conversar sobre IA aplicada, agentes em produção ou um sistema que precisa sair do papel, o caminho mais direto é o e-mail.</p>
+    <p class="contact">
+      <a href="mailto:ctpmmg2009_101@hotmail.com">ctpmmg2009_101@hotmail.com</a>
+      <a href="https://www.linkedin.com/in/alfafisteles" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/Alfafis" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+</footer>
 
-  <section id="ia">
-    <div class="head">
-      <h2>Engenharia com IA e open source</h2>
-      <span class="label">Fluxo orientado a agentes em ~30 projetos</span>
-    </div>
-    <div class="oss">
-      <article class="repo">
-        <div class="tag">Plugin para Claude Code</div>
-        <h3><a href="https://github.com/Alfafis/critique" target="_blank" rel="noopener">critique</a></h3>
-        <p>Aprovado no marketplace da comunidade da Anthropic. Usa hooks de ciclo de vida da sessão, funciona em 4 idiomas e não tem dependências externas.</p>
-        <div class="facts">208 testes · CI em Linux, macOS e Windows</div>
-      </article>
-      <article class="repo">
-        <div class="tag">Plugin para Claude Code</div>
-        <h3><a href="https://github.com/Alfafis/cc-token-statusline" target="_blank" rel="noopener">cc-token-statusline</a></h3>
-        <p>Telemetria de tokens, contexto e cota em Python só com stdlib. Lê o transcript de forma incremental.</p>
-        <div class="facts">stdlib only · CI em 3 sistemas operacionais</div>
-      </article>
-      <article class="repo">
-        <div class="tag">Agente autônomo · paper trading</div>
-        <h3>investimentos-ai</h3>
-        <p>Análise de ações da B3 com servidor MCP próprio (análise técnica e fundamentalista, DCF, VaR/Sharpe, backtesting) e rotinas agendadas em modo headless. O experimento revelou 9 falhas de orquestração, todas corrigidas.</p>
-        <div class="facts">23 ferramentas MCP · 6 rotinas · 84 testes</div>
-      </article>
-    </div>
-    <p style="margin:24px 0 0;max-width:72ch;color:var(--muted)">No dia a dia, orquestro múltiplos modelos (um planeja e revisa, outro executa, roteados pelo custo do erro), com skills próprias, memória de projeto versionada (contexto, ADRs, sessões) e MCPs integrados a Jira, CI, hosting/DNS e navegador para validação ao vivo.</p>
-  </section>
-
-  <section id="trajetoria">
-    <div class="head"><h2>Trajetória</h2><span class="label">CLT e consultoria PJ</span></div>
-    <div class="timeline">
-      <div class="job"><time>2026 – atual</time><div><h3>Cogna Labs <small>· consultoria via ICON IT</small></h3><p>Desenvolvimento nos produtos Genoma e EmpregaAI.</p></div></div>
-      <div class="job"><time>jun 2021 – atual</time><div><h3>RM Digital Solutions <small>· fundador e engenheiro full stack</small></h3><p>Consultoria que atende Petz e clientes no Brasil, EUA e Itália, com SaaS multi-tenant e IA generativa em produção.</p></div></div>
-      <div class="job"><time>ago 2024 – set 2025</time><div><h3>Itaú Unibanco <small>· Analista de Engenharia de TI</small></h3><p>Produto interno da vertical de seguros do zero à v1 em produção. Novas camadas de API REST na modernização de legados, com 35% menos tempo médio de resposta.</p></div></div>
-      <div class="job"><time>dez 2022 – jan 2024</time><div><h3>Grupo Boticário <small>· Full Stack Developer</small></h3><p>Um de 2 engenheiros frontend da plataforma de logística. Migração de monolito para microsserviços, com 40% menos tempo de deploy.</p></div></div>
-      <div class="job"><time>jun – dez 2022</time><div><h3>ProAK <small>· EUA, SaaS de criptoativos</small></h3><p>Otimização de consultas e pipelines em Java/Python, com 60% menos tempo de resposta. APIs desenhadas com stakeholders em inglês.</p></div></div>
-      <div class="job"><time>nov 2021 – set 2022</time><div><h3>Loft <small>· Software Engineer Front End</small></h3><p>Listagem de imóveis de uma proptech unicórnio, com 13 mil imóveis e 30 mil corretores. Performance, page speed e componentes React testados.</p></div></div>
-      <div class="job"><time>jun – dez 2021</time><div><h3>Atlas Finance e Vênus Checkout <small>· EUA</small></h3><p>Tech Lead na Atlas: arquitetura de microsserviços, Scrum e CI/CD, referência técnica na due diligence do M&amp;A. Na Vênus, arquitetura AWS + Cloudflare com cerca de 30% menos custo de cloud.</p></div></div>
-      <div class="job"><time>mar – out 2021</time><div><h3>dti digital <small>· Desenvolvimento de Sistemas</small></h3><p>React, .NET Core e micro-frontends com Module Federation.</p></div></div>
-      <div class="job"><time>jul 2020 – mar 2021</time><div><h3>Getrak <small>· Front End</small></h3><p>Web e mobile (Vue/Nuxt, React Native) da plataforma de rastreamento veicular depois adquirida pela Unidas.</p></div></div>
-      <div class="job"><time>jul 2015 – out 2019</time><div><h3>Axxiom <small>· desenvolvimento frontend</small></h3><p>Dono por 4 anos do GDIS da Cemig, sistema em Vue.js com mais de 200 usuários internos.</p></div></div>
-    </div>
-  </section>
-
-  <section id="competencias">
-    <div class="head"><h2>Competências</h2><span class="label">Pós em Eng. de Software · Bacharel em Ciência da Computação</span></div>
-    <div class="skills">
-      <div><h3>Frontend</h3><p>React, Next.js, TypeScript, TanStack Query, Tailwind, Jest/RTL, Cypress</p></div>
-      <div><h3>Backend</h3><p>NestJS, Node.js, Java/Spring Boot, Python, REST, BullMQ, SQS</p></div>
-      <div><h3>Dados</h3><p>PostgreSQL (RLS, multi-tenant), Drizzle, Redis, Supabase</p></div>
-      <div><h3>Infra</h3><p>AWS (ECS, EKS, Lambda, RDS, Bedrock), Terraform, Docker, Kubernetes, Cloudflare</p></div>
-      <div><h3>IA</h3><p>Bedrock, tool calling, SSE, guardrails, human-in-the-loop, MCP, Claude Code</p></div>
-    </div>
-  </section>
-
-  <footer>
-    <h2>Tem um produto para tirar do papel?</h2>
-    <div class="links">
-      <span id="email2">ctpmmg2009_101@hotmail.com</span>
-      <a href="https://www.linkedin.com/in/alfafisteles" target="_blank" rel="noopener">linkedin.com/in/alfafisteles</a>
-      <a href="https://github.com/Alfafis" target="_blank" rel="noopener">github.com/Alfafis</a>
-    </div>
-  </footer>
 </div>
-
-<script>
-(function(){
-  var btn=document.getElementById('copy-email');
-  btn.addEventListener('click',function(){
-    var t=document.getElementById('email').textContent;
-    function sel(){var r=document.createRange();r.selectNodeContents(document.getElementById('email'));var s=getSelection();s.removeAllRanges();s.addRange(r);btn.textContent='selecionado';}
-    try{navigator.clipboard.writeText(t).then(function(){btn.textContent='copiado';setTimeout(function(){btn.textContent='copiar'},1800)},sel)}catch(e){sel()}
-  });
-  var buttons=document.querySelectorAll('.filters button');
-  var items=document.querySelectorAll('#projetos [data-tags]');
-  buttons.forEach(function(b){
-    b.addEventListener('click',function(){
-      var f=b.dataset.f;
-      buttons.forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false')});
-      items.forEach(function(it){it.hidden=!(f==='all'||it.dataset.tags.split(' ').indexOf(f)>-1)});
-    });
-  });
-})();
-</script>
 </body>
 </html>
